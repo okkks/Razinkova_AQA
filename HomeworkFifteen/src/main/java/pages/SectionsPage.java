@@ -1,0 +1,26 @@
+package pages;
+
+import base.BasePage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class SectionsPage extends BasePage {
+
+
+    @FindBy(css = "#newMail > a")
+    private WebElement mailIcon;
+
+    public SectionsPage(WebDriver driver) {
+
+        super(driver);
+        PageFactory.initElements(driver, this);
+
+    }
+
+    public void goToMail() {
+        this.mailIcon.click();
+    }
+
+}
