@@ -12,8 +12,6 @@ public class CallCalculator {
 
         System.out.println("Input the first number and click 'Enter'");
 
-        try {
-
             if (scanner.hasNextInt()) {
                 num1 = scanner.nextInt();
             }
@@ -39,13 +37,13 @@ public class CallCalculator {
                     System.out.print(CalculatorLogic.multiplication(num1, num2));
                     break;
                 case '/':
-                    System.out.print(CalculatorLogic.division(num1, num2));
+                    try {
+                        System.out.print(CalculatorLogic.division(num1, num2));
+                    } catch (ArithmeticException e) {
+                        System.err.println("Division by zero is impossible " + e);
+                    }
                     break;
             }
-
-        } catch (ArithmeticException e) {
-            System.err.println("Division by zero is impossible " + e);
-        }
 
     }
 }
