@@ -9,8 +9,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CalcSmokeTest {
 
-    private CalculatorLogic calc = new CalculatorLogic();
-
     @Test(enabled = true, groups = "CalculatorTest")
     public void testAddition() throws Exception {
         assertThat(CalculatorLogic.addition(2,3), Matchers.equalTo(5));
