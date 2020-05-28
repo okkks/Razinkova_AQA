@@ -20,8 +20,8 @@ public class HomePage extends BasePage {
     private WebElement submitLoginForm;
     @FindBy(css = " ul.user_menu > li.first > a")
     private WebElement helloUserButton;
-    @FindBy(css = "ul.user_menu > li.first > a")
-    private WebElement welcomeText;
+    @FindBy(css = "li.right > a")
+    private WebElement logOutButton;
 
 
     public HomePage(WebDriver driver) {
@@ -56,9 +56,9 @@ public class HomePage extends BasePage {
 
     }
 
-    public String getWelcomeText() {
+    public String getLogoutButtonText() {
 
-        return this.welcomeText.getText();
+        return this.logOutButton.getText();
 
     }
 

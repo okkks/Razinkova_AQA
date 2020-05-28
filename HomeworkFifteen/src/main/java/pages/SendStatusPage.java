@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SendStatusPage extends BasePage {
 
-    @FindBy(css = "div.Left > p > a")
+    @FindBy(css = "li.new > a")
     private WebElement incomeLetters;
 
     public SendStatusPage(WebDriver driver) {

@@ -31,12 +31,10 @@ public class NewMessagePage extends BasePage {
 
     public void sendEmail(){
 
-        this.to.sendKeys(PropertyHelper.getInstance().getProperty("login"));
-        this.subject.sendKeys("subject");
-        this.letterBody.sendKeys("body");
+        this.to.sendKeys(PropertyHelper.getInstance().getProperty("email"));
+        this.subject.sendKeys("subject123456789");
+        this.letterBody.sendKeys("body123456789");
         this.submitLetterForm.click();
-        driver.navigate().refresh();
-       // Assert.assertTrue(senderName.getText().contains(PropertyHelper.getInstance().getProperty("userName")));
 
     }
 

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class IncomeLettersPage extends BasePage {
 
 
-    @FindBy(css = "span .frm")
+    @FindBy(css = "div:nth-child(20) > a > span.frm")
     private WebElement senderName;
 
     public IncomeLettersPage(WebDriver driver) {

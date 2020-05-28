@@ -1,11 +1,10 @@
 import base.BaseTest;
-import org.openqa.selenium.chrome.ChromeDriver;
+import net.bytebuddy.implementation.attribute.FieldAttributeAppender;
+import net.bytebuddy.pool.TypePool;
+import org.apache.log4j.BasicConfigurator;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import pages.*;
 import helpers.PropertyHelper;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -50,7 +49,9 @@ public class IuaTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
         homePage.loginSuccess();
 
-        Assert.assertTrue(homePage.getWelcomeText().contains(PropertyHelper.getInstance().getProperty("userName")));
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+        Assert.assertTrue(homePage.getLogoutButtonText().contains("Выход"));
 
     }
 
